@@ -1,0 +1,4 @@
+Django==4.2.7
+psutil==5.9.6
+djangorestframework==3.14.0
+django-cors-headers==4.3.1
