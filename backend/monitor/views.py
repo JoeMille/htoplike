@@ -12,7 +12,7 @@ def current_stats(request):
     try:
         stats = SystemMonitorService.get_system_stats()
         stats['timestamp'] = SystemMonitorService.save_current_stats().timestamp
-        return Response(stats, status=status.http_200_ok)
+        return Response(stats, status=status.HTTP_200_OK)
     
     except Exception as e:
         return Response(
