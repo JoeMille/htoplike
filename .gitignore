@@ -1,0 +1,83 @@
+# Python/Django files
+backend/__pycache__/
+backend/*/__pycache__/
+backend/*/*/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+.Python
+backend/db.sqlite3
+backend/db.sqlite3-journal
+.pytest_cache/
+
+# Virtual environments
+backend/venv/
+backend/env/
+backend/.venv/
+backend/.env/
+
+# Django specific
+backend/media/
+backend/staticfiles/
+backend/static/
+backend/migrations/*.pyc  # Add this
+backend/*/migrations/__pycache__/  # Add this
+
+# Node.js/React files
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.next/
+frontend/out/
+
+# Package manager files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# TypeScript/Webpack specific (ADD THESE)
+frontend/.tsbuildinfo
+frontend/webpack-stats.json
+frontend/public/bundle.js*
+frontend/public/main.js*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Coverage reports
+coverage/
+*.cover
+.coverage
+.nyc_output
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
