@@ -30,6 +30,24 @@ class SystemMonitorService:
             if hasattr(os, 'getloadavg'):
                 load_avg = os.getloadavg()
 
-                stats['load_average'] = ',' join(map(str,load_avg))
+                stats['load_average'] = ','.join(map(str,load_avg))
 
             disk = psutil.disk_usage('/')
+            stats['disk_total'] = disk.total
+            stats['disk_used'] = disk.used
+            stats['disk_free'] = disk.free
+
+            stats['disk_percent'] = (disk.used / disk.total) * 100
+        
+        except Exception as e:
+            print(f"Error collecting stats: {e}")
+        return stats
+    
+    @staticmethod
+    def save_current_stats():
+        stats = SystemMonitorService.get_system_stats()
+        system_stats = SystemStats(**stats)
+
+        system_stats.save()
+
+        return system_stats
