@@ -16,6 +16,11 @@ const formatBytes = (bytes: number | null): string => {
     return `${value.toFixed(1)} ${units[unitIndex]}`;
 };
 
+const formatPercentage = (percent: number | null): string => {
+    if (percent === null || percent === undefined) return 'N/A';
+    return `${percent.toFixed(1)}%`
+}
+
 const App: React.FC = () => {
     const [stats, setStats] = useState<SystemStats | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
