@@ -67,5 +67,55 @@ const App: React.FC = () => {
         );
     }
 
-    return ()
-    };
+    return (
+        <div className='container'>
+            <header className='header'>
+                <h1>System Monitor Dashboard</h1>
+                <p>Real-Time Stats Monitoring</p>
+            </header>
+
+                  <div className="stats-grid">
+        <div className="stat-item">
+          <div className="stat-label">CPU Usage</div>
+          {/* {} in JSX means "run JavaScript expression" */}
+          <div className="stat-value">{formatPercentage(stats.cpu_percent)}</div>
+        </div>
+
+        <div className="stat-item">
+          <div className="stat-label">Memory Usage</div>
+          <div className="stat-value">{formatPercentage(stats.memory_percent)}</div>
+        </div>
+
+        <div className="stat-item">
+          <div className="stat-label">Memory Used</div>
+          <div className="stat-value">{formatBytes(stats.memory_used)}</div>
+        </div>
+
+        <div className="stat-item">
+          <div className="stat-label">Memory Total</div>
+          <div className="stat-value">{formatBytes(stats.memory_total)}</div>
+        </div>
+
+        <div className="stat-item">
+          <div className="stat-label">Disk Usage</div>
+          <div className="stat-value">{formatPercentage(stats.disk_percent)}</div>
+        </div>
+
+        <div className="stat-item">
+          <div className="stat-label">CPU Cores</div>
+          <div className="stat-value">
+            {stats.cpu_count && stats.cpu_count_logical ?
+                `${stats.cpu_count} (${stats.cpu_count_logical} threads)` :
+                'N/A'
+            }
+        </div>
+    </div>
+</div>
+
+<div className='timestamp'>
+    Last updated: {new Date(stats.timestamp).toLocaleString()}
+</div>
+</div>
+);};
+
+export default App;
