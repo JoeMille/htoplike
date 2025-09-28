@@ -1,28 +1,28 @@
 {
-  "name": "frontend",
+  "name": "system-monitor-frontend",
   "version": "1.0.0",
-  "description": "",
+  "description": "System Monitor frontend",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack serve --mode development",
+    "build": "webpack __mode production",
+    "dev": "webpack serve --mode development --open"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "axios": "^1.12.2",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "axios": "1.12.2"
   },
   "devDependencies": {
-    "@types/react": "^19.1.14",
-    "@types/react-dom": "^19.1.9",
-    "html-webpack-plugin": "^5.6.4",
-    "ts-loader": "^9.5.4",
-    "typescript": "^5.9.2",
-    "webpack": "^5.101.3",
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.2"
+    "@types/react": "19.1.14",
+    "@types/react-dom": "19.1.9",
+    "typescript": "5.9.2",
+    "webpack": "5.101.3",
+    "webpack-cli": "6.0.1",
+    "webpack-dev-server": "5.2.2",
+    "html-webpack-plugin": "5.6.4",
+    "ts-loader": "9.5.4",
+    "css-loader": "7.1.2",
+    "style-loader": "4.0.0"
   }
 }
